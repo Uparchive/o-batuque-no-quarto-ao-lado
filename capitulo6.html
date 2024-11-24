@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 6 - O Batuque No Quarto Ao Lado</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-batuque-no-quarto-ao-lado">
+    <div class="container capitulo" id="capitulo6">
+        <h1 class="chapter-number">Capítulo 6</h1>
+        <h2 class="chapter-title">Conexões Invisíveis</h2>
+        <p>
+            Marcus estava parado no centro do quarto, olhando para a parede que separava seu apartamento do de Elisa. Era uma barreira fina, quase simbólica. De um lado, a rotina previsível de uma mulher comum. Do outro, um universo que ela não podia imaginar. Ele fechou os olhos e encostou os dedos na parede. Podia sentir, de forma quase mística, a presença dela do outro lado. 
+        </p>
+        <p>
+            "As pessoas falam sem abrir a boca", ele pensou. "Um passo hesitante, uma porta que range, um copo pousado com força. Tudo é uma mensagem. Basta ouvir." Ele abriu os olhos e se afastou da parede, girando o martelo na mão. Não era um gesto ameaçador, mas meditativo. Ele fazia isso quando estava pensando.
+        </p>
+        <p>
+            Marcus não acreditava em sorte. Cada movimento que fazia, cada decisão, era calculado. Para ele, não havia coincidências, apenas conexões que ainda não tinham sido percebidas. "As conexões invisíveis", murmurou, enquanto organizava ferramentas na bancada da cozinha. "Cada uma delas leva a um propósito maior. E meu propósito está do outro lado desta parede."
+        </p>
+        <p>
+            Naquela noite, ele começou a trabalhar em algo novo. Com marteladas controladas e precisas, começou a construir. Não era um móvel, pelo menos não no sentido comum. Para Marcus, cada peça tinha um significado maior. "A preparação é tão importante quanto o ato", refletiu enquanto batia o martelo contra a madeira. "Você não pode jogar se não entender o tabuleiro."
+        </p>
+        <p>
+            Enquanto trabalhava, parava de tempos em tempos para ouvir. O som baixo de uma música vindo do apartamento de Elisa era a trilha sonora de seus pensamentos. Ele imaginava o que ela fazia. Estaria lendo? Cozinhando? Dormindo? Ele não precisava ver para saber. Elisa estava tão previsível quanto o som de suas chaves ao entrar pela porta.
+        </p>
+        <p>
+            Quando terminou o trabalho, Marcus sentou-se e observou sua criação. Era simples, mas funcional. Ele correu os dedos pela superfície da madeira, sentindo cada imperfeição que precisava ser corrigida. "Perfeição não é um estado", disse a si mesmo. "É um processo contínuo."
+        </p>
+        <p>
+            Antes de apagar a luz, ele deu uma última olhada na parede que separava os dois apartamentos. Não era só uma barreira. Era um convite. "Você ainda não sabe, Elisa", murmurou, enquanto o quarto mergulhava na escuridão. "Mas nós estamos conectados de uma forma que você jamais entenderia."
+        </p>
+        <p>
+            No silêncio que se seguiu, Marcus deitou-se, os olhos abertos na escuridão. Para ele, a noite não era o fim do dia. Era apenas o início de algo maior.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo5.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('continua.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

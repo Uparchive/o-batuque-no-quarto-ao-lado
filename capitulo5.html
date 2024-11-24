@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 5 - O Batuque No Quarto Ao Lado</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-batuque-no-quarto-ao-lado">
+    <div class="container capitulo" id="capitulo5">
+        <h1 class="chapter-number">Capítulo 5</h1>
+        <h2 class="chapter-title">Ecos da Rotina</h2>
+        <p>
+            Elisa acordou com o som do despertador ecoando pelo quarto. Era mais uma manhã como qualquer outra, com o céu cinzento se infiltrando pelas cortinas. Ela sentiu o peso da rotina nos ombros antes mesmo de colocar os pés no chão. Trabalho, contas, estudos. Tudo parecia uma sequência interminável.
+        </p>
+        <p>
+            Na cozinha, ela esquentou a água para o café enquanto olhava pela janela. Por um breve momento, observou o prédio em frente. Janelas fechadas, vidas ocultas. Era estranho pensar em quantas pessoas viviam tão perto, mas tão distantes ao mesmo tempo. "Quantos segredos cabem em um prédio?", pensou, distraída.
+        </p>
+        <p>
+            Quando saiu para o trabalho, cruzou o corredor e notou novamente a porta do vizinho. Fechada. Desde que ele havia se mudado, não o vira pessoalmente. Era estranho, mas não incomum. Muitas pessoas no prédio pareciam preferir manter-se anônimas. Elisa também gostava disso.
+        </p>
+        <p>
+            No ônibus, ela se perdeu em pensamentos enquanto ouvia música nos fones de ouvido. Sua mente voltou para casa, para o silêncio das noites que ela tanto apreciava. Mas, nos últimos dias, havia algo diferente. Uma sensação, talvez. Um peso no ar que ela não sabia explicar. "Deve ser apenas a rotina", concluiu, afastando a ideia.
+        </p>
+        <p>
+            O dia no trabalho foi como qualquer outro: papéis para revisar, ligações intermináveis, colegas reclamando dos mesmos problemas de sempre. Elisa era eficiente, mas não estava ali por paixão. Era um trabalho. Um meio para um fim. No horário de almoço, sentou-se sozinha no refeitório e abriu um livro, buscando um refúgio momentâneo da monotonia.
+        </p>
+        <p>
+            Quando o dia finalmente terminou, ela pegou o ônibus de volta para casa. O sol estava se pondo, tingindo o céu com tons de laranja e vermelho. Elisa olhou pela janela, pensando em como as cores do céu podiam ser tão vivas, enquanto sua vida parecia tão apagada ultimamente.
+        </p>
+        <p>
+            Ao chegar ao prédio, subiu as escadas com passos cansados. O corredor estava vazio, mas a luz tremulante de uma lâmpada no teto criava sombras inquietantes nas paredes. Elisa parou por um instante em frente à porta do vizinho, sentindo uma estranha curiosidade. Algo a fez hesitar, mas ela balançou a cabeça e entrou em seu apartamento, trancando a porta atrás de si.
+        </p>
+        <p>
+            No silêncio do apartamento, ela ligou o rádio e começou a preparar o jantar. A sensação de inquietação ainda estava lá, mas ela ignorou. Elisa estava acostumada a conviver com seus próprios pensamentos, e eles nem sempre eram confortáveis. O que ela não sabia era que, do outro lado da parede, Marcus estava ouvindo cada som, cada passo. Observando sem ver. Planejando sem agir.
+        </p>
+        <p>
+            Para ela, era apenas mais uma noite comum. Para ele, era o próximo movimento no tabuleiro.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo4.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo6.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>
