@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Batuque No Quarto Ao Lado - Autor</title>
+    <link rel="stylesheet" href="capastyle.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Identifique o livro atual
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+
+            // Função para obter o nome do armazenamento local com base no livro
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            // Verifica se há um último capítulo lido no localStorage
+            const lastReadChapter = localStorage.getItem(getStorageKey());
+            const continueButton = document.getElementById("continue-button");
+
+            if (lastReadChapter) {
+                // Se houver um último capítulo lido, mostra "Continuar Leitura" e redireciona para o arquivo correto do capítulo
+                continueButton.textContent = "Continuar Leitura";
+                continueButton.href = `${lastReadChapter}.html`; // Redireciona para o arquivo HTML do último capítulo lido
+            } else {
+                // Se não houver, mostra "Iniciar Leitura" e redireciona para o Capítulo 1
+                continueButton.textContent = "Iniciar Leitura";
+                continueButton.href = "capitulo1.html"; // Redireciona para o Capítulo 1
+            }
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+            const storageKey = `${currentBook}_lastReadChapter`;
+            localStorage.setItem(storageKey, chapterId);
+        }
+    </script>
+</head>
+<body data-book-id="o-batuque-no-quarto-ao-lado">
+    <div class="container">
+        <a href="indice.html">
+            <img src="OBNQAL-poster.png" alt="Capa do livro O Batuque No Quarto Ao Lado" class="book-cover">
+        </a>
+        <h1 class="book-title">O Batuque No Quarto Ao Lado</h1>
+        <h2 class="book-subtitle">"Uma História de Tirar o Fôlego"</h2>
+        <p class="author-name">Por Kell Shalom</p>
+        <div class="buttons">
+            <a id="continue-button" href="#" class="button">Iniciar Leitura</a>
+        </div>
+    </div>
+</body>
+</html>

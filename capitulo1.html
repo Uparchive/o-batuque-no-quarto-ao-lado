@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1 - O Batuque No Quarto Ao Lado</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-batuque-no-quarto-ao-lado">
+    <div class="container capitulo" id="capitulo1">
+        <h1 class="chapter-number">Capítulo 1</h1>
+        <h2 class="chapter-title">Chegadas</h2>
+        <p>
+            A noite parecia carregar um peso invisível enquanto ele dirigia pela estrada. O céu estava limpo, mas havia uma inquietação no ar que o deixava em alerta. O rádio do carro estava desligado; o silêncio absoluto era melhor do que qualquer som que pudesse distraí-lo. Ele não podia se dar ao luxo de perder o controle agora.
+        </p>
+        <p>
+            "O que se passa na cabeça de um psicopata quando, no silêncio, ouve-se um som de uma porta abrindo?" Essa pergunta ecoava em algum lugar de sua mente, ainda que ele se recusasse a encará-la diretamente. A resposta, ele sabia, estava nas suas mãos, ou talvez no martelo ao lado.
+        </p>
+        <p>
+            No banco do passageiro, uma sacola de ferramentas estava aberta, revelando um martelo gasto e uma chave de fenda enferrujada. Não eram apenas ferramentas de trabalho. Elas eram memórias. Fragmentos de um passado que ele não podia apagar, mas que usava para justificar cada decisão. Seus dedos tamborilavam no volante, e a cicatriz no dorso da mão parecia queimar, como se fosse um lembrete.
+        </p>
+        <p>
+            "O que fazer quando a ferramenta está a meio metro de distância e uma presa fácil no quarto ao lado?" Ele respirou fundo. Não era hora de agir por impulso. O jogo exigia paciência, e ele era um jogador meticuloso.
+        </p>
+        <p>
+            Ele não olhou para trás. Não havia razão para isso. Tudo o que precisava estava à sua frente: um novo começo, um lugar para desaparecer. Escolher aquele prédio não tinha sido por acaso. Ele estudou o lugar antes mesmo de cruzar os limites da cidade. Era discreto, velho, e, acima de tudo, não atraía atenção. O tipo de lugar onde todos preferiam manter suas vidas separadas, onde ninguém fazia perguntas demais.
+        </p>
+        <p>
+            Quando estacionou o carro em frente ao prédio, demorou alguns segundos antes de sair. Seus olhos percorreram as janelas iluminadas, contando as histórias silenciosas de seus futuros vizinhos. Ele respirou fundo e abriu a porta. O vento frio da noite bateu em seu rosto, trazendo um ar de clareza e propósito. Ele estava pronto.
+        </p>
+        <p>
+            O síndico estava esperando no corredor, um homem de meia-idade com um olhar cansado e uma caneta presa no bolso da camisa. Ele sorriu de forma profissional, oferecendo as chaves do novo apartamento e algumas instruções rápidas sobre as regras do prédio. "As paredes são finas", comentou o síndico, como se fosse uma advertência. Ele apenas assentiu, guardando a informação.
+        </p>
+        <p>
+            Quando abriu a porta do apartamento, sentiu um alívio instantâneo. Não era grande, mas era suficiente. Ele colocou a sacola de ferramentas sobre o balcão da cozinha e ficou em silêncio, ouvindo o ambiente. Tudo parecia calmo, até que um som sutil o fez erguer a cabeça: o leve clique da porta do apartamento ao lado se abrindo.
+        </p>
+        <p>
+            "O que seria mais excitante do que o som de uma porta ao lado abrindo, marcando o início de um novo jogo?" Ele não sabia quem era o vizinho, mas o som era suficiente para reacender algo dentro dele. Seu sorriso lento e controlado denunciava apenas uma coisa: o jogo estava prestes a começar.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('index.html')">Capa</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo2.html')">Iniciar</button>
+        </div>
+    </div>
+</body>
+</html>

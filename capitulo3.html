@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 3 - O Batuque No Quarto Ao Lado</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-batuque-no-quarto-ao-lado">
+    <div class="container capitulo" id="capitulo3">
+        <h1 class="chapter-number">Capítulo 3</h1>
+        <h2 class="chapter-title">Preparativos</h2>
+        <p>
+            Marcus estava parado no centro de seu novo apartamento, cercado por caixas ainda fechadas. O ambiente era pequeno, mas ele sabia que seria o suficiente. Não precisava de muito espaço, apenas do essencial. O espaço vazio ao seu redor era como uma tela branca, aguardando suas primeiras pinceladas.
+        </p>
+        <p>
+            Ele abriu uma das caixas e começou a retirar os itens cuidadosamente. Não havia pressa. "Nada que vale a pena deve ser feito com pressa", pensou. Cada ferramenta, cada peça, cada objeto tinha um lugar exato. Tudo precisava estar no lugar certo. "O caos é apenas uma desculpa para os fracos que não sabem controlar o ambiente."
+        </p>
+        <p>
+            Ele pegou o martelo. O peso era reconfortante, quase familiar. Girou-o entre os dedos como se fosse uma extensão natural de sua mão. A madeira do cabo estava desgastada, mas isso apenas aumentava sua história. "Uma ferramenta não é só um objeto; é uma ideia. E ideias são indestrutíveis."
+        </p>
+        <p>
+            Enquanto alinhava as ferramentas sobre o balcão, ele observava cada uma como se estivesse avaliando soldados antes de uma batalha. "Qual será a primeira a entrar em ação?" Seus dedos deslizaram por uma chave de fenda, uma lâmina de serra, e então voltaram para o martelo. Era quase poético.
+        </p>
+        <p>
+            Ele então caminhou até a janela, observando o mundo do lado de fora. As luzes da cidade piscavam à distância, mas não o interessavam. Ele estava mais focado nas sombras do corredor, nas vidas invisíveis que se escondiam atrás de cada porta. Cada uma era uma história. Uma possibilidade. Um jogo. "Você nunca conhece alguém até observar o que faz quando pensa que ninguém está olhando."
+        </p>
+        <p>
+            O som da porta ao lado se fechando horas antes ainda ecoava em sua mente. Era um som comum, mas para ele era diferente. Era um sinal. Um convite para explorar, para entender quem estava ali. Ele não precisava conhecer ainda. Ele só precisava sentir. E ele sentia.
+        </p>
+        <p>
+            Marcus pegou uma cadeira e sentou-se no centro do apartamento. O martelo descansava em seu colo enquanto ele fechava os olhos por um momento. "A perfeição está nos detalhes", murmurou para si mesmo, abrindo os olhos lentamente. "E eu sou impecável."
+        </p>
+        <p>
+            Enquanto a noite se aprofundava, ele começou a organizar as caixas, preparando o terreno para o que viria a seguir. "O jogo não começa quando você se move. Ele começa quando você planeja." A vizinha ao lado talvez não soubesse, mas o som de sua porta havia marcado o primeiro movimento.
+        </p>
+        <p>
+            Ele sorriu pela primeira vez naquela noite. "Bem-vinda ao tabuleiro", disse baixinho, enquanto colocava o martelo de volta sobre o balcão. O silêncio do apartamento parecia mais carregado agora, quase vivo. Ele sabia que a noite ainda era jovem, e ele tinha muito trabalho a fazer.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo2.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('continua.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

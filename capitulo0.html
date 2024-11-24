@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1 - O Batuque No Quarto Ao Lado</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-batuque-no-quarto-ao-lado">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo1" -->
+    <div class="container capitulo" id="capitulo1">
+        <img src="OBNQAL-poster.png" alt="Capa do livro O Batuque No Quarto Ao Lado" class="book-cover">
+        <h1 class="chapter-number">Capítulo 1</h1>
+        <h2 class="chapter-title">Introdução</h2>
+        <p>
+            "O Batuque No Quarto Ao Lado" é uma história de terror psicológico que mergulha nos mistérios e horrores escondidos atrás das portas de um simples apartamento. Elisa Parker, uma jovem cheia de sonhos, começa a desconfiar de seu vizinho Marcus, um marceneiro atraente e reservado. O que parecia ser apenas um homem comum esconde um segredo perturbador: Marcus é um serial killer que tortura e elimina jovens mulheres.
+        </p>
+        <p>
+            Este livro explora temas como segredos sombrios, a desconfiança e os horrores ocultos sob a superfície de uma vida aparentemente normal. É uma narrativa intensa e cheia de mistérios que desafia os leitores a enfrentarem seus próprios medos.
+        </p>
+        <p class="classification">
+            <strong>Classificação:</strong> Este livro é recomendado para maiores de 18 anos devido ao conteúdo que aborda violência, tortura psicológica e temas sensíveis.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('index.html')">Capa</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo1.html')">Iniciar</button>
+        </div>
+    </div>
+</body>
+</html>

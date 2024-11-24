@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 2 - O Batuque No Quarto Ao Lado</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-batuque-no-quarto-ao-lado">
+    <div class="container capitulo" id="capitulo2">
+        <h1 class="chapter-number">Capítulo 2</h1>
+        <h2 class="chapter-title">Rotinas</h2>
+        <p>
+            Elisa subiu os degraus do prédio com o corpo pesado de cansaço. O dia no trabalho havia sido mais longo do que o esperado, cheio de problemas que não pertenciam a ela, mas que insistiam em cair sobre seus ombros. Sua bolsa estava pendurada em um dos braços, enquanto as chaves giravam preguiçosamente entre seus dedos.
+        </p>
+        <p>
+            Ao chegar ao último andar, sentiu o alívio de finalmente estar em casa. O corredor mal iluminado e com as paredes marcadas por anos de descuido não era exatamente aconchegante, mas era familiar. Para Elisa, aquele pequeno apartamento era um refúgio. Um espaço só seu onde ela podia esquecer o caos do mundo lá fora.
+        </p>
+        <p>
+            Parando em frente à porta, ela inseriu a chave e girou com um clique suave, empurrando a porta com o pé. Antes de entrar, olhou rapidamente para o lado, notando pela primeira vez a porta do apartamento vizinho entreaberta. Havia movimento lá dentro, mas ela não conseguiu distinguir quem estava. Talvez fosse o novo morador. 
+        </p>
+        <p>
+            Não era de seu interesse. Elisa entrou e fechou a porta atrás de si, deixando escapar um longo suspiro enquanto apoiava as costas na madeira. Tirando os sapatos com os pés, ela largou a bolsa sobre a cadeira mais próxima e caminhou até a cozinha em busca de um copo de água. A familiaridade do ambiente a acalmava, mesmo com a bagunça de livros e papéis espalhados pela mesa.
+        </p>
+        <p>
+            Enquanto bebia, seus olhos se fixaram na janela. A cidade parecia tão distante e quieta dali. Era estranho como, em um prédio cheio de gente, ela às vezes se sentia completamente sozinha. Mas, naquele momento, a solidão não era um problema. Era um alívio.
+        </p>
+        <p>
+            Elisa terminou sua água, apagou a luz da cozinha e caminhou até o quarto. Sem nem trocar de roupa, se jogou na cama com o celular na mão, rolando distraidamente pela tela. Suas pálpebras ficaram pesadas, e ela sabia que em poucos minutos estaria dormindo. A porta ao lado não era algo que chamasse sua atenção naquele momento, mas o leve rangido da madeira, mesmo que imperceptível para ela, ecoava pela mente de outra pessoa.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo1.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo3.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>
