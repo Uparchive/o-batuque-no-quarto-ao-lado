@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 7 - O Batuque No Quarto Ao Lado</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-batuque-no-quarto-ao-lado">
+    <div class="container capitulo" id="capitulo7">
+        <h1 class="chapter-number">Capítulo 7</h1>
+        <h2 class="chapter-title">Um Som na Noite</h2>
+        <p>
+            A noite estava particularmente silenciosa. Elisa estava sentada no sofá, com uma caneca de chá nas mãos e um livro aberto no colo. A música baixa que saía do rádio parecia preencher os cantos vazios do apartamento. Para ela, era uma noite comum, mas o som que ouviu a fez levantar os olhos imediatamente.
+        </p>
+        <p>
+            Um baque seco, vindo do corredor. Não era alto, mas o suficiente para romper o silêncio. Elisa deixou a caneca na mesa e ficou em pé, caminhando lentamente até a porta. Espiou pelo olho mágico, mas não viu nada. O corredor estava vazio, exceto pela lâmpada que tremulava levemente no teto. 
+        </p>
+        <p>
+            Do outro lado da parede, Marcus também ouviu o som. Ele parou o que estava fazendo, inclinando a cabeça para ouvir melhor. Seus instintos, sempre afiados, se acenderam. "Algo está errado", pensou, colocando o martelo na bancada e caminhando até a porta.
+        </p>
+        <p>
+            Elisa abriu a porta devagar, olhando para o corredor deserto. Não havia ninguém, mas o barulho se repetiu, dessa vez mais próximo. Veio do andar de baixo. Ela hesitou. Não era comum ouvir barulhos tão tarde, e algo no som parecia diferente, quase ameaçador.
+        </p>
+        <p>
+            Marcus observava tudo pela fresta de sua porta, sem ser visto. Ele estudava cada movimento de Elisa, cada expressão. "Curiosa, mas cautelosa", pensou, sentindo um misto de frustração e admiração. Por um momento, considerou sair, mas algo o fez ficar. Ele queria ver até onde ela iria.
+        </p>
+        <p>
+            Elisa decidiu descer as escadas. Seus passos eram cuidadosos, mas firmes. Enquanto descia, o barulho parou, mergulhando o prédio em um silêncio inquietante. No segundo andar, ela encontrou uma sacola caída no chão, com latas de comida espalhadas ao redor. Um dos vizinhos devia tê-la deixado cair, mas onde estava agora?
+        </p>
+        <p>
+            Foi quando ouviu passos atrás dela. Elisa se virou rapidamente, o coração disparado, mas não viu ninguém. Apenas o eco de seus próprios movimentos. "Estou imaginando coisas", murmurou, respirando fundo. Pegou a sacola do chão e a colocou em um canto, decidindo voltar para seu apartamento.
+        </p>
+        <p>
+            No momento em que girou para subir as escadas, ela sentiu um par de olhos observando-a. Não sabia de onde vinha a sensação, mas era tão palpável que quase podia tocá-la. Apressou o passo, quase correndo para o terceiro andar. Ao entrar em seu apartamento, trancou a porta e encostou-se nela, respirando com dificuldade.
+        </p>
+        <p>
+            Do outro lado da parede, Marcus sorriu. "Curiosa, mas vulnerável", murmurou, voltando para sua bancada. A noite não tinha terminado, pelo menos para ele.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo6.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo8.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

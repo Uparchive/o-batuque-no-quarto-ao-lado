@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 9 - O Batuque No Quarto Ao Lado</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId);
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "o-batuque-no-quarto-ao-lado";
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="o-batuque-no-quarto-ao-lado">
+    <div class="container capitulo" id="capitulo9">
+        <h1 class="chapter-number">Capítulo 9</h1>
+        <h2 class="chapter-title">À Beira da Escuridão</h2>
+        <p>
+            A noite começou tranquila, mas algo no ar parecia diferente. Elisa não conseguia se concentrar no livro que estava lendo. A música que antes a confortava agora parecia abafada e distante. De repente, tudo ficou escuro. Um apagão.
+        </p>
+        <p>
+            Elisa olhou em volta, o coração acelerando. A escuridão do apartamento era densa, e o silêncio repentino fez com que ela se sentisse ainda mais isolada. Tentou acender a lanterna do celular, mas a bateria estava baixa. "Ótimo", murmurou, levantando-se do sofá às cegas.
+        </p>
+        <p>
+            No corredor, Marcus observava o prédio mergulhado na escuridão. Ele havia planejado aquilo com precisão, desligando a chave principal de energia. Cada detalhe era calculado. "O caos revela as verdadeiras naturezas", pensou, enquanto caminhava silenciosamente em direção ao andar de Elisa.
+        </p>
+        <p>
+            Elisa abriu a porta do apartamento com cautela, espiando para o corredor escuro. "Será que foi só aqui?", pensou, tentando ouvir algum som que indicasse que mais alguém estava acordado. O prédio estava em silêncio absoluto, o que só aumentava sua ansiedade.
+        </p>
+        <p>
+            Marcus sabia que ela sairia. Pessoas como Elisa odiavam a incerteza. Ele esperou na sombra de uma esquina, observando-a enquanto ela caminhava hesitante pelo corredor, com uma vela acesa na mão. "Curiosa, mas vulnerável", murmurou baixinho, sentindo a adrenalina subir.
+        </p>
+        <p>
+            Elisa desceu as escadas, indo em direção ao quadro de energia do prédio. Sabia que o local era assustador até mesmo durante o dia, mas não tinha outra opção. A chama da vela tremulava, criando sombras distorcidas nas paredes. Cada passo parecia ecoar mais alto do que o anterior.
+        </p>
+        <p>
+            Quando chegou ao porão, Elisa sentiu um arrepio. O lugar estava ainda mais frio do que ela se lembrava. Tentou abrir a caixa de energia, mas estava trancada. "Isso não estava assim antes", murmurou, tentando manter a calma. Um som atrás dela fez com que se virasse rapidamente, mas não viu nada. 
+        </p>
+        <p>
+            Marcus estava perto, escondido na sombra. Ele podia ouvir a respiração acelerada dela, podia quase sentir o medo emanando dela. Mas ele sabia que ainda não era o momento. Havia algo de fascinante em observar alguém à beira do desespero. "O verdadeiro medo é sutil. Ele cresce lentamente, até tomar conta", pensou, recuando antes que ela pudesse percebê-lo.
+        </p>
+        <p>
+            Elisa, sem conseguir resolver o problema, subiu as escadas apressadamente. Sentia como se algo estivesse atrás dela, mas não queria olhar. Ao entrar em seu apartamento, trancou a porta e encostou-se nela, tentando recuperar o fôlego. "Isso não faz sentido", disse em voz alta, olhando para a vela quase apagada em suas mãos.
+        </p>
+        <p>
+            Do outro lado da parede, Marcus voltou para seu apartamento, satisfeito. "A escuridão revela tudo o que a luz esconde", murmurou, enquanto acendia uma vela sobre sua bancada. O jogo estava avançando, e ele estava no controle.
+        </p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo8.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo10.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>
